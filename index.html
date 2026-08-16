@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-<!-- build: 2026-08-16-r8 · hamburger + notes round · verify: this comment visible in view-source -->
+<!-- build: 2026-08-16-r9 · hamburger + notes round · verify: this comment visible in view-source -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,7 +123,9 @@ nav ul a:hover{border-bottom-color:var(--ink-strong)}
   .g-row-2{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:62vw}
 }
 @media(max-width:520px){
-  .g-row-1,.g-row-2{grid-template-columns:1fr;grid-auto-rows:80vw}
+  .g-row-1,.g-row-2{grid-template-columns:1fr;grid-auto-rows:auto}
+  .g-row figure{height:auto}
+  .g-row img{width:100%;height:auto;object-fit:contain;object-position:center}
 }
 
 /* ---------- spec rows ---------- */
