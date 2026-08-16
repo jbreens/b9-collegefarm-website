@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<!-- build: 2026-08-16-r7 · hamburger + notes round · verify: this comment visible in view-source -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>College Farm — Film &amp; Photography Location, East Sussex</title>
+<meta name="description" content="College Farm is a Box 9-designed barn conversion in East Sussex, available as a dry-hire location for stills, motion and editorial production. 6m volume room, 100A 3-phase power, acoustic silence, pool and sauna.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --greige:#B1A89B;
+  --white:#FFFFFF;
+  --ink:#3B3733;
+  --ink-strong:#2E2B27;
+  --soft:#5C564C;
+  --mushroom:#B5AB9D;
+  --rule:rgba(59,55,51,.25);
+  --colgap:clamp(28px,5vw,72px);
+  --pad:clamp(20px,5vw,60px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--white);
+  color:var(--ink);
+  font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight:400;
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--ink-strong);color:var(--white)}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--ink-strong);outline-offset:3px;
+}
+
+/* ---------- nav ---------- */
+nav{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  padding:24px var(--pad);
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(6px);
+}
+nav .wordmark{font-weight:700;text-transform:uppercase;letter-spacing:.24em;font-size:14px;color:var(--ink-strong)}
+nav ul{display:flex;gap:clamp(16px,3vw,40px);list-style:none}
+nav ul a{
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-strong);
+  border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;
+}
+nav ul a:hover{border-bottom-color:var(--ink-strong)}
+/* mobile: hamburger + full-screen overlay */
+.nav-toggle{
+  display:none;
+  background:none;border:none;cursor:pointer;padding:10px;margin:-10px;
+  width:44px;height:44px;position:relative;z-index:70;
+}
+.nav-toggle span{
+  display:block;width:22px;height:1.5px;background:var(--ink-strong);
+  margin:5px auto;transition:transform .25s,opacity .25s;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:900px){
+  /* backdrop-filter on nav creates a containing block that breaks
+     position:fixed children — disable it on mobile */
+  nav{backdrop-filter:none;background:rgba(255,255,255,.97)}
+  .nav-toggle{display:block}
+  nav ul{
+    position:fixed;inset:0;z-index:60;
+    display:none;
+    flex-direction:column;justify-content:center;align-items:center;gap:0;
+    background:var(--white);
+  }
+  nav ul.open{display:flex}
+  nav ul li{width:100%;text-align:center}
+  nav ul a{
+    display:block;padding:16px 0;border-bottom:none;
+    font-size:13px;letter-spacing:.24em;
+  }
+  body.nav-locked{overflow:hidden}
+}
+
+/* ---------- full-bleed imagery ---------- */
+.bleed{width:100%;position:relative;background:#2B2824}
+.bleed.hero{height:min(82vh,820px)}
+.bleed.break{height:min(52vh,520px)}
+.bleed.break img{object-position:center bottom}
+
+/* ---------- greige content panel ---------- */
+.panel{background:var(--greige)}
+.panel .grid{
+  display:grid;grid-template-columns:240px 1fr;gap:var(--colgap);
+  max-width:1180px;margin:0 auto;
+  padding:clamp(44px,7vh,76px) var(--pad);
+}
+@media(max-width:760px){.panel .grid{grid-template-columns:1fr;gap:32px}}
+.meta dl div{margin-bottom:22px}
+.meta dt{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-strong)}
+.meta dd{font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-top:4px}
+.prose .lede{
+  font-weight:700;font-size:16px;line-height:1.5;color:var(--ink-strong);
+  max-width:58ch;margin-bottom:20px;
+}
+.prose p{max-width:62ch;margin-bottom:18px}
+.prose p:last-child{margin-bottom:0}
+
+/* ---------- gallery (mirrors IMAGES_GROUPED layout) ---------- */
+.gallery{background:var(--white);display:grid;gap:3px;padding:3px 0}
+.g-row{display:grid;gap:3px}
+.g-row-1{grid-template-columns:1fr 1fr 2.1fr 1fr;height:min(52vh,480px)}
+.g-row-2{grid-template-columns:1.25fr 1fr 1fr 1fr 1fr;height:min(40vh,380px)}
+.g-row figure{position:relative;overflow:hidden;margin:0;height:100%}
+.g-row img.pos-low{object-position:center 68%}
+@media(max-width:900px){
+  .g-row-1{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:62vw}
+  .g-row-2{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:62vw}
+}
+@media(max-width:520px){
+  .g-row-1,.g-row-2{grid-template-columns:1fr;grid-auto-rows:80vw}
+}
+
+/* ---------- spec rows ---------- */
+.spec{border-top:1px solid var(--rule)}
+.spec-row{padding:24px 0;border-bottom:1px solid var(--rule)}
+.spec-row h3{font-size:15px;font-weight:700;color:var(--ink-strong);margin-bottom:4px}
+.spec-row p{max-width:62ch}
+.spec-row .figures{
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-top:8px;
+}
+
+/* ---------- detail / kit lists ---------- */
+.detail-list{list-style:none;border-top:1px solid var(--rule)}
+.detail-list li{padding:14px 0;border-bottom:1px solid var(--rule);max-width:66ch}
+.detail-list b{font-weight:700;color:var(--ink-strong)}
+
+/* ---------- drawings ---------- */
+.drawings{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px}
+.drawings a{display:block;border:1px solid var(--rule);transition:border-color .2s}
+.drawings figure{margin:0;overflow:hidden}
+.drawings a:hover{border-color:var(--ink-strong)}
+.drawings img{aspect-ratio:1.414;object-fit:cover;background:#E7E1D6;transform:scale(1.12)}
+.drawings figcaption{
+  padding:8px 10px;
+  font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);
+}
+@media(max-width:760px){.drawings{grid-template-columns:1fr}}
+.pdf-links{list-style:none;border-top:1px solid var(--rule)}
+.pdf-links li{padding:14px 0;border-bottom:1px solid var(--rule)}
+.pdf-links a{
+  font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-strong);
+  border-bottom:1px solid var(--rule);padding-bottom:1px;transition:border-color .2s;
+}
+.pdf-links a:hover{border-bottom-color:var(--ink-strong)}
+.pdf-links .ext{font-size:10px;font-weight:400;letter-spacing:.16em;color:var(--soft);margin-left:10px}
+
+/* ---------- partners ---------- */
+.partners-list{list-style:none;border-top:1px solid var(--rule)}
+.partners-list li{
+  display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:baseline;
+  padding:16px 0;border-bottom:1px solid var(--rule);
+}
+@media(max-width:600px){.partners-list li{grid-template-columns:1fr;gap:2px}}
+.partners-list .p-cat{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-strong)}
+.partners-list a{
+  font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);
+  border-bottom:1px solid var(--rule);padding-bottom:1px;transition:color .2s,border-color .2s;
+}
+.partners-list a:hover{color:var(--ink-strong);border-bottom-color:var(--ink-strong)}
+
+/* ---------- form ---------- */
+form{border-top:1px solid var(--rule)}
+.field{border-bottom:1px solid var(--rule);padding:14px 0}
+.field label{
+  display:block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-strong);margin-bottom:6px;
+}
+.field input,.field select,.field textarea{
+  width:100%;border:none;background:transparent;
+  font-family:inherit;font-size:15px;color:var(--ink-strong);padding:2px 0;
+}
+.field textarea{resize:vertical;min-height:88px}
+.field ::placeholder{color:rgba(59,55,51,.4)}
+.two-up{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:560px){.two-up{grid-template-columns:1fr}}
+button.submit{
+  margin-top:28px;
+  font-family:inherit;font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  background:var(--ink-strong);color:var(--greige);border:1px solid var(--ink-strong);
+  padding:15px 36px;cursor:pointer;transition:background .2s,color .2s;
+}
+button.submit:hover{background:transparent;color:var(--ink-strong)}
+.direct{font-size:15px;margin-top:24px}
+.direct a{border-bottom:1px solid var(--ink-strong);font-weight:600;color:var(--ink-strong)}
+
+/* ---------- form success ---------- */
+.form-done{display:none;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:28px 0}
+.form-done .fd-head{font-weight:700;font-size:15px;color:var(--ink-strong);margin-bottom:6px}
+.form-done p{max-width:52ch}
+.form-error{display:none;margin-top:14px;font-size:13px;color:var(--ink-strong)}
+
+/* ---------- footer ---------- */
+footer{
+  background:var(--white);text-align:center;
+  padding:clamp(64px,10vh,120px) var(--pad) 44px;
+}
+footer .mark{
+  font-weight:700;text-transform:uppercase;letter-spacing:.3em;font-size:17px;
+  color:var(--mushroom);margin-bottom:18px;
+}
+footer h3{
+  font-weight:700;text-transform:uppercase;letter-spacing:.14em;
+  font-size:14px;color:var(--ink-strong);margin-bottom:34px;
+}
+footer .legal{
+  max-width:72ch;margin:0 auto 26px;
+  font-size:12px;line-height:1.8;color:#8A847B;
+}
+footer .copyright{font-size:12px;color:#8A847B}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Primary">
+  <a class="wordmark" href="#top">College Farm</a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="nav-menu">
+    <li><a href="#house">The House</a></li>
+    <li><a href="#technical">For Production</a></li>
+    <li><a href="#spaces">The Spaces</a></li>
+    <li><a href="#drawings">Drawings</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#enquire">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ============ HERO ============ -->
+<div class="bleed hero" id="top">
+  <img src="media/1B_IMAGE_01_EXTERIOR_-_26_HERO_ORCHARD_SETTING_L.jpg" alt="College Farm seen across its orchard, apples in the foreground and rooftops beyond" fetchpriority="high">
+</div>
+
+<!-- ============ PROJECT PANEL ============ -->
+<section class="panel" id="house">
+  <div class="grid">
+    <aside class="meta reveal">
+      <dl>
+        <div><dt>Project</dt><dd>College Farm</dd></div>
+        <div><dt>Location</dt><dd>East Sussex</dd></div>
+        <div><dt>Design</dt><dd>Box 9</dd></div>
+        <div><dt>Use</dt><dd>Location Hire</dd></div>
+      </dl>
+    </aside>
+    <div class="prose">
+      <p class="lede reveal">A modern reimagining of a Sussex barn, built around volume, texture and light.</p>
+      <p class="reveal">College Farm sits on three-quarters of an acre in the East Sussex countryside, within easy reach of London. Rather than build new, the original barn was completely transformed from the bones up into a contemporary home with a 230sqm footprint, one that holds onto its agricultural scale while everything within it has been refined.</p>
+      <p class="reveal">From the moment you enter, the space draws you upwards. At the heart of the house is a six-metre-high volume, left deliberately empty; a calm, open room with the proportions of a loft and a soft clay texture. There is nothing to move and nothing to work around; light can be shaped, controlled or shut out entirely, and the room simply waits for whatever is brought into it.</p>
+      <p class="reveal">Throughout, the materials are honest and allowed to speak for themselves. Hand-aged smoky oak underfoot, raw and burnished steel and natural oak, each surface with its own individual look and feel, with architectural spot lighting combined with soft, glowing features. The result is somewhere between a wellness retreat and a working design studio: moody, textured and quiet.</p>
+      <p class="reveal">Outside, the same language continues. A nine-metre pool runs alongside a 50sqm terrace with an integrated sauna, uniquely clad in steamed, rhythmic cork, framed by planting, open sky and green countryside views stretching to the South Downs. Interior and exterior were conceived together, and they cut together on camera.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY (layout per IMAGES_GROUPED) ============ -->
+<div class="gallery">
+  <div class="g-row g-row-1">
+    <figure><img class="pos-low" src="media/2_IMAGE_HERO_WIDE_STUDIO_P.jpg" alt="The double-height volume, oak mezzanine above and steel-framed window to the willow beyond" loading="lazy"></figure>
+    <figure><img class="pos-low" src="media/10_DINING_P.jpg" alt="Long iron-based dining table against tall clay walls" loading="lazy"></figure>
+    <figure><img src="media/3A_IMAGE_KITCHEN_L.jpg" alt="Stainless steel commercial kitchen and dining table beneath clay-plastered walls" loading="lazy"></figure>
+    <figure><img src="media/7_STUDIO_VIEW.jpg" alt="The glass-fronted studio link, chair and cork table framed by the willow" loading="lazy"></figure>
+  </div>
+  <div class="g-row g-row-2">
+    <figure><img src="media/8_BOWL_DETAIL_L.jpg" alt="Turned and stitched wooden bowl detail" loading="lazy"></figure>
+    <figure><img src="media/6_FF_ENSUITE_L.jpg" alt="First-floor ensuite, low evening light" loading="lazy"></figure>
+    <figure><img src="media/5_IMAGE_SAUNA_P.jpg" alt="Sauna corner with timber bench and glowing globe light" loading="lazy"></figure>
+    <figure><img src="media/4_IMAGE_DOUBLE_HT_L_.jpg" alt="Looking up through the double-height space, oak shutters open to the apartment" loading="lazy"></figure>
+    <figure><img src="media/9_SHELVING_P.jpg" alt="Reclaimed steel and timber shelving against oak cupboards" loading="lazy"></figure>
+  </div>
+</div>
+
+<!-- ============ FOR PRODUCTION ============ -->
+<section class="panel" id="technical">
+  <div class="grid">
+    <aside class="meta reveal">
+      <dl>
+        <div><dt>Section</dt><dd>For Production</dd></div>
+        <div><dt>Hire Type</dt><dd>Dry Hire</dd></div>
+      </dl>
+    </aside>
+    <div class="prose">
+      <p class="lede reveal">Prepared for production from the ground up.</p>
+      <p class="reveal" style="margin-bottom:34px">The infrastructure most locations ask a crew to bring is already in place at College Farm: power, silence, blackout and access, all installed and tested.</p>
+
+      <div class="spec reveal">
+        <div class="spec-row">
+          <h3>Dedicated 63A three-phase supply</h3>
+          <p>An accessible 63A distribution socket serves both interior and exterior shoot zones; productions run their own distro from it, removing the need for generator hire on the large majority of shoots.</p>
+          <p class="figures">63A 3-Phase · Interior / Exterior</p>
+        </div>
+        <div class="spec-row">
+          <h3>Acoustic silence</h3>
+          <p>High-performance insulation throughout allows clean sync sound, voice-over and interview recording without treatment or rescue in post. Floors are insulated for acoustics and warmth, with underfloor heating throughout, so the vast clay walls remain uncluttered; no visible radiators.</p>
+        </div>
+        <div class="spec-row">
+          <h3>Blackout on request</h3>
+          <p>Blackout screens are provided on request across the principal spaces, including the skylights, for day-for-night and fully controlled lighting setups.</p>
+        </div>
+        <div class="spec-row">
+          <h3>Starlink Wi-Fi mesh</h3>
+          <p>A Starlink-backed Wi-Fi mesh reaches every interior and exterior shoot zone, supporting live client review and a connected video village.</p>
+          <p class="figures">Full-Site Coverage · Interior + Exterior</p>
+        </div>
+        <div class="spec-row">
+          <h3>Tested for 3.5-tonne and Luton vans</h3>
+          <p>The high-clearance driveway and gates have been load-in tested with 3.5-tonne and Luton vans, with direct, level access to the principal spaces.</p>
+        </div>
+        <div class="spec-row">
+          <h3>Farmhouse green room, by separate arrangement</h3>
+          <p>The adjacent farmhouse can be added to a hire by separate arrangement, as a dedicated green room for talent holding, wardrobe and hair &amp; make-up, kept entirely off set.</p>
+        </div>
+        <div class="spec-row">
+          <h3>East Sussex, within the London orbit</h3>
+          <p>The house sits on private grounds within the London production radius. The precise address and travel notes are shared at enquiry stage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ON SITE ============ -->
+<section class="panel" id="kit" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <aside class="meta reveal">
+      <dl>
+        <div><dt>Section</dt><dd>On Site</dd></div>
+      </dl>
+    </aside>
+    <div class="prose">
+      <p class="lede reveal">Dry hire, properly equipped.</p>
+      <p class="reveal" style="margin-bottom:34px">College Farm is offered as a dry hire: the location itself, without crew, lighting or camera packages, which productions bring and run themselves. The kit that protects the building and keeps a day moving is already here and included.</p>
+      <ul class="detail-list reveal">
+        <li><b>Crew tables &amp; seating.</b> Industrial wooden trestle tables and professional stacking chairs, available on request.</li>
+        <li><b>Client corner.</b> A dedicated workstation area for clients and agency, away from the working set.</li>
+        <li><b>Floor protection.</b> A full roll of heavy-duty Correx, provided on site for load-in routes and working areas.</li>
+        <li><b>Stand protection.</b> A bucket of pre-cut tennis balls for light stands, so the floors stay unmarked.</li>
+        <li><b>Wardrobe.</b> A heavy-duty Z-frame clothing rail and a professional commercial garment steamer.</li>
+        <li><b>Espresso.</b> A self-service, high-output espresso station for the crew.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE SPACES ============ -->
+<section class="panel" id="spaces" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <aside class="meta reveal">
+      <dl>
+        <div><dt>Section</dt><dd>The Spaces</dd></div>
+        <div><dt>Footprint</dt><dd>230 SQM</dd></div>
+      </dl>
+    </aside>
+    <div class="prose">
+      <p class="lede reveal">Room by room.</p>
+      <ul class="detail-list reveal">
+        <li><b>Flexible studio.</b> Living, dining and working space with light and windows on all three sides.</li>
+        <li><b>Glass-fronted link.</b> Studio, yoga or living space with direct views over the pool, framed by the pear tree.</li>
+        <li><b>Pool.</b> A 9m &times; 2m plaster-finished pool, 1.2m deep, with decking all around, edged with wild aromatic grasses.</li>
+        <li><b>Commercial kitchen.</b> Stainless steel throughout, with Fisher &amp; Paykel fridge drawers and dishwasher; suited to chef hire and kitchenware photography.</li>
+        <li><b>Dining.</b> Seating for ten inside; space for twenty to thirty outside with production's own furniture.</li>
+        <li><b>First-floor apartment.</b> Overlooking the double-height space, with dressing area and private ensuite.</li>
+        <li><b>Two bedrooms.</b> Quiet, rich ply-lined rooms in the same material language as the rest of the house.</li>
+        <li><b>Wellbeing bathroom.</b> Rural views through a picture window, roll-top bath, separate WC and <b>sauna</b>.</li>
+        <li><b>Private office.</b> A separate, enclosed workspace.</li>
+        <li><b>Store room.</b> Direct service-entrance access for kit and staging.</li>
+        <li><b>Open barn.</b> A covered outdoor volume for gym setups, feasting scenes and weather cover.</li>
+        <li><b>Garden setting.</b> Green native hedging on three sides, a seasonal pond, wild grasses, lawn, a well, an authentic Spanish glasshouse and raised beds.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SITE PLAN + DRAWINGS ============ -->
+<section class="panel" id="drawings" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <aside class="meta reveal">
+      <dl>
+        <div><dt>Section</dt><dd>Drawings</dd></div>
+        <div><dt>Scale</dt><dd>1:100 @ A3</dd></div>
+      </dl>
+    </aside>
+    <div class="prose">
+      <p class="lede reveal">The plans, drawn by Box 9.</p>
+      <p class="reveal" style="margin-bottom:26px">Ground floor, first-floor apartment, elevation and site plan, for planning setups, load-ins and lighting before a recce. Full-resolution PDFs below.</p>
+      <div class="drawings reveal">
+        <a href="media/BOX_9_Farm_Studio_location_drawings.pdf" target="_blank" rel="noopener">
+          <figure>
+            <img src="media/bg-cf-drawings-1.jpg" alt="Ground floor plan — studio, kitchen, link, bedrooms, bathroom and gathering barn with pool" loading="lazy">
+            <figcaption>Ground Floor</figcaption>
+          </figure>
+        </a>
+        <a href="media/BOX_9_Farm_Studio_location_drawings.pdf" target="_blank" rel="noopener">
+          <figure>
+            <img src="media/bg-cf-drawings-2.jpg" alt="First floor plan — apartment with bedroom, ensuite and shutters over the double-height space" loading="lazy">
+            <figcaption>First Floor Apartment</figcaption>
+          </figure>
+        </a>
+        <a href="media/BOX_9_Farm_Studio_location_drawings.pdf" target="_blank" rel="noopener">
+          <figure>
+            <img src="media/bg-cf-drawings-3.jpg" alt="South-west elevation — timber-clad barn with open-fronted deck and pool" loading="lazy">
+            <figcaption>South-West Elevation</figcaption>
+          </figure>
+        </a>
+        <a href="media/BOX_9_Farm_Studio_site_plan.pdf" target="_blank" rel="noopener">
+          <figure>
+            <img src="media/bg-cf-siteplan.jpg" alt="Site plan — house, barns, pool, pond, orchard, lawns and boundary planting across three-quarters of an acre" loading="lazy">
+            <figcaption>Site Plan</figcaption>
+          </figure>
+        </a>
+      </div>
+      <ul class="pdf-links reveal">
+        <li><a href="media/BOX_9_Farm_Studio_location_drawings.pdf" download>Location Drawings</a><span class="ext">Download PDF</span></li>
+        <li><a href="media/BOX_9_Farm_Studio_site_plan.pdf" download>Site Plan</a><span class="ext">Download PDF</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FULL-BLEED BREAK ============ -->
+<div class="bleed break">
+  <img src="media/1A_IMAGE_OPTB_EXT_SETTING_WIDE_L.jpg" alt="College Farm in its wider setting — rooftops behind trees, post-and-rail fencing and wild grass" loading="lazy">
+</div>
+
+<!-- ============ PARTNERS ============ -->
+<section class="panel" id="partners">
+  <div class="grid">
+    <aside class="meta reveal">
+      <dl>
+        <div><dt>Section</dt><dd>Partners</dd></div>
+      </dl>
+    </aside>
+    <div class="prose">
+      <p class="lede reveal">Made with.</p>
+      <p class="reveal" style="margin-bottom:34px">The house was built with a small group of makers and suppliers whose work is visible in every frame.</p>
+      <ul class="partners-list reveal">
+        <li><span class="p-cat">Design</span><a href="https://box-9.co.uk/" target="_blank" rel="noopener">Box 9</a></li>
+        <li><span class="p-cat">Clay Walls</span><a href="https://clay-works.com/" target="_blank" rel="noopener">Clayworks</a></li>
+        <li><span class="p-cat">Flooring</span><a href="https://maincompany.co.uk/flooring/" target="_blank" rel="noopener">The Main Company</a></li>
+        <li><span class="p-cat">Oak Doors &amp; Features</span><a href="https://www.craftb.be/" target="_blank" rel="noopener">Craft B</a></li>
+        <li><span class="p-cat">Kitchen</span><span><a href="https://commercialkitchens.co.uk/" target="_blank" rel="noopener">Commercial Kitchens</a>&nbsp;&nbsp;<a href="https://www.fisherpaykel.com/uk/" target="_blank" rel="noopener">Fisher &amp; Paykel</a></span></li>
+        <li><span class="p-cat">Bathrooms</span><a href="https://studio-ore.com/" target="_blank" rel="noopener">Studio Ore</a></li>
+        <li><span class="p-cat">Ironmongery</span><a href="https://www.corston.com/" target="_blank" rel="noopener">Corston</a></li>
+        <li><span class="p-cat">Bedding</span><a href="https://www.floks.co.uk/" target="_blank" rel="noopener">Floks</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="panel" id="enquire" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <aside class="meta reveal">
+      <dl>
+        <div><dt>Section</dt><dd>Contact</dd></div>
+        <div><dt>Response</dt><dd>One Working Day</dd></div>
+      </dl>
+    </aside>
+    <div class="prose">
+      <p class="lede reveal">College Farm is hired by direct arrangement only.</p>
+      <p class="reveal" style="margin-bottom:30px">Send your dates and a short outline of the production. We respond within one working day, and recces are warmly welcomed.</p>
+
+      <form class="reveal" action="https://formspree.io/f/mjybepyb" method="POST">
+        <div class="field"><label for="f-name">Name / Production Company</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Doe, Studio North"></div>
+        <div class="two-up">
+          <div class="field"><label for="f-type">Project Type</label>
+            <select id="f-type" name="project_type">
+              <option>Stills</option><option>Motion</option><option>Editorial</option><option>Mixed / Other</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-dates">Requested Dates</label><input id="f-dates" name="dates" type="text" placeholder="e.g. 14–16 July 2026"></div>
+        </div>
+        <div class="two-up">
+          <div class="field"><label for="f-crew">Crew Size</label><input id="f-crew" name="crew_size" type="text" inputmode="numeric" placeholder="e.g. 18"></div>
+          <div class="field"><label for="f-power">Power Requirements</label><input id="f-power" name="power" type="text" placeholder="e.g. 63A three-phase for HMI package"></div>
+        </div>
+        <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell us about the production, the spaces you need, and anything unusual."></textarea></div>
+        <button class="submit" type="submit">Send Enquiry</button>
+        <p class="form-error" id="form-error">Something went wrong sending the enquiry; please email us directly at <a href="mailto:collegefarm@box-9.co.uk" style="border-bottom:1px solid var(--ink-strong);font-weight:600">collegefarm@box-9.co.uk</a>.</p>
+      </form>
+
+      <div class="form-done" id="form-done" role="status">
+        <p class="fd-head">Enquiry sent.</p>
+        <p>Thank you, we respond within one working day. If it's urgent, email us directly below.</p>
+      </div>
+
+      <p class="direct reveal"><a href="mailto:collegefarm@box-9.co.uk">collegefarm@box-9.co.uk</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="mark">College Farm</div>
+  <h3>Stills &nbsp;Motion &nbsp;Editorial</h3>
+  <p class="legal">College Farm is private property, made available for photographic and film production under individual licence. Hire is by direct arrangement only and no automated booking is offered. All enquiries, rates and production materials are treated in strict confidence, and the precise address is disclosed only to confirmed productions. Drone, night and amplified-sound work by prior agreement.</p>
+  <p class="copyright">©2026 College Farm</p>
+</footer>
+
+<script>
+const navToggle=document.querySelector('.nav-toggle');
+const navMenu=document.getElementById('nav-menu');
+function closeNav(){
+  navMenu.classList.remove('open');
+  navToggle.setAttribute('aria-expanded','false');
+  document.body.classList.remove('nav-locked');
+}
+navToggle.addEventListener('click',()=>{
+  const open=navMenu.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded',open);
+  document.body.classList.toggle('nav-locked',open);
+});
+navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav()});
+
+const form=document.querySelector('form');
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=form.querySelector('button.submit');
+  const err=document.getElementById('form-error');
+  err.style.display='none';
+  btn.disabled=true;btn.textContent='Sending\u2026';
+  try{
+    const res=await fetch(form.action,{
+      method:'POST',
+      body:new FormData(form),
+      headers:{'Accept':'application/json'}
+    });
+    if(res.ok){
+      form.style.display='none';
+      document.getElementById('form-done').style.display='block';
+    }else{
+      throw new Error('bad status');
+    }
+  }catch(_){
+    err.style.display='block';
+    btn.disabled=false;btn.textContent='Send Enquiry';
+  }
+});
+
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
