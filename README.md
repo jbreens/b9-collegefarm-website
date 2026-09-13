@@ -43,7 +43,7 @@ Page content and layout are maintained in `index.html`. The main sections are:
 
 Images and PDFs are referenced with paths under `media/`; preserve those paths
 when replacing or adding assets. The public-facing power information refers to
-the accessible 64A three-phase socket.
+the accessible 63A three-phase socket.
 
 ## Enquiry Form
 
