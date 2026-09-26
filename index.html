@@ -226,6 +226,14 @@ footer .legal{
   font-size:12px;line-height:1.8;color:#8A847B;
 }
 footer .copyright{font-size:12px;color:#8A847B}
+.instagram-link{
+  display:inline-flex;align-items:center;gap:7px;
+  margin-top:16px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--soft);border-bottom:1px solid var(--rule);padding-bottom:2px;
+  transition:color .2s,border-color .2s;
+}
+.instagram-link:hover{color:var(--ink-strong);border-bottom-color:var(--ink-strong)}
+.instagram-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
 
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
@@ -524,6 +532,7 @@ footer .copyright{font-size:12px;color:#8A847B}
       </div>
 
       <p class="direct reveal"><a href="mailto:collegefarm@box-9.co.uk">collegefarm@box-9.co.uk</a></p>
+      <p class="direct reveal"><a href="https://www.instagram.com/location9collegefarm/" target="_blank" rel="noopener">Follow @location9collegefarm on Instagram</a></p>
     </div>
   </div>
 </section>
@@ -534,6 +543,10 @@ footer .copyright{font-size:12px;color:#8A847B}
   <h3>Stills &nbsp;Motion &nbsp;Editorial</h3>
   <p class="legal">College Farm is private property, made available for photographic and film production under individual licence. Enquiries are welcome directly or through location agencies, with each booking reviewed and agreed individually; no automated booking is offered. All enquiries, rates and production materials are treated in strict confidence, and the precise address is disclosed only to confirmed productions. Drone, night and amplified-sound work by prior agreement.</p>
   <p class="copyright">©2026 College Farm</p>
+  <a class="instagram-link" href="https://www.instagram.com/location9collegefarm/" target="_blank" rel="noopener" aria-label="Follow College Farm on Instagram">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+    <span>@location9collegefarm</span>
+  </a>
 </footer>
 
 <script>
