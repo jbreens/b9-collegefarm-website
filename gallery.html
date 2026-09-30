@@ -76,14 +76,15 @@ nav ul a:hover,nav ul a[aria-current="page"]{border-bottom-color:var(--ink-stron
   .mosaic-final{aspect-ratio:400 / 111;grid-template-rows:minmax(0,1fr)}
 }
 @media(max-width:480px){.gallery-grid{padding:24px 0}.mosaic-group{gap:0;margin-bottom:0}.mosaic-group .gallery-item{margin-bottom:0}}
-dialog{width:min(94vw,1200px);max-width:none;border:0;padding:0;background:#2B2824;color:var(--white);box-shadow:0 20px 70px rgba(0,0,0,.35)}
-.lightbox-image{display:block;width:100%;height:min(86vh,900px);object-fit:contain}
-.lightbox-close,.lightbox-control{position:absolute;z-index:1;border:1px solid rgba(255,255,255,.65);border-radius:50%;background:rgba(46,43,39,.45);color:var(--white);cursor:pointer;display:grid;place-items:center;transition:background .2s,border-color .2s}
-.lightbox-close:hover,.lightbox-control:hover{background:rgba(46,43,39,.86);border-color:var(--white)}
+dialog{width:min(94vw,1200px);min-height:min(86vh,900px);max-width:none;margin:auto;border:0;padding:0;background:var(--greige);color:var(--ink-strong);box-shadow:0 20px 70px rgba(0,0,0,.25);display:grid;place-items:center}
+dialog::backdrop{background:rgba(177,168,155,.88)}
+.lightbox-image{display:block;max-width:100%;max-height:min(86vh,900px);width:auto;height:auto;object-fit:contain}
+.lightbox-close,.lightbox-control{position:absolute;z-index:1;border:1px solid rgba(46,43,39,.65);border-radius:50%;background:rgba(255,255,255,.45);color:var(--ink-strong);cursor:pointer;display:grid;place-items:center;transition:background .2s,border-color .2s}
+.lightbox-close:hover,.lightbox-control:hover{background:rgba(255,255,255,.9);border-color:var(--ink-strong)}
 .lightbox-close{top:16px;right:16px;width:40px;height:40px;font-size:25px;line-height:1}
 .lightbox-control{top:50%;transform:translateY(-50%);width:44px;height:44px;font-size:24px;line-height:1}
 .lightbox-control.prev{left:16px}.lightbox-control.next{right:16px}
-.lightbox-count{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.lightbox-count{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-strong)}
 footer{background:var(--white);text-align:center;padding:clamp(64px,10vh,120px) var(--pad) 44px}
 footer .mark{font-weight:700;text-transform:uppercase;letter-spacing:.3em;font-size:17px;color:var(--mushroom);margin-bottom:18px}
 footer h3{font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:14px;color:var(--ink-strong);margin-bottom:34px}
