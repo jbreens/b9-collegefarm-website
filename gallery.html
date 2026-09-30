@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — College Farm, East Sussex</title>
+<meta name="description" content="A complete image gallery of College Farm, a film and photography location in East Sussex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --greige:#B1A89B;--white:#FFFFFF;--ink:#3B3733;--ink-strong:#2E2B27;
+  --soft:#5C564C;--mushroom:#B5AB9D;--rule:rgba(59,55,51,.25);--pad:clamp(20px,5vw,60px)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--greige);color:var(--ink);font-family:'Hanken Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink-strong);outline-offset:3px}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding:24px var(--pad);position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(6px)}
+nav .wordmark{font-weight:700;text-transform:uppercase;letter-spacing:.24em;font-size:14px;color:var(--ink-strong)}
+nav ul{display:flex;gap:clamp(16px,3vw,40px);list-style:none}
+nav ul a{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-strong);border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s}
+nav ul a:hover,nav ul a[aria-current="page"]{border-bottom-color:var(--ink-strong)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:10px;margin:-10px;width:44px;height:44px;position:relative;z-index:7}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--ink-strong);margin:5px auto;transition:transform .25s,opacity .25s}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:900px){
+  nav{backdrop-filter:none;background:rgba(255,255,255,.97)}
+  .nav-toggle{display:block}
+  nav ul{position:fixed;inset:0;z-index:6;display:none;flex-direction:column;justify-content:center;align-items:center;gap:0;background:var(--white)}
+  nav ul.open{display:flex}
+  nav ul li{width:100%;text-align:center}
+  nav ul a{display:block;padding:16px 0;border-bottom:none;font-size:13px;letter-spacing:.24em}
+  body.nav-locked{overflow:hidden}
+}
+.gallery-grid{width:80%;max-width:1180px;margin:0 auto;padding:3px;background:var(--greige)}
+.mosaic-group{display:grid;gap:3px;margin-bottom:3px;align-items:stretch}
+.gallery-item{display:block;min-width:0;height:100%;border:0;background:#E7E1D6;cursor:zoom-in;padding:0}
+.gallery-item img{display:block;width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.gallery-item:hover img{opacity:.82}
+.mosaic-top{grid-template-columns:66fr 123fr 62fr 127fr;grid-template-areas:"g1 g2 g2 g3" "g4 g5 g6 g3"}
+.mosaic-second{grid-template-columns:1.45fr 1fr 1fr;grid-template-areas:"g7 g8 g9"}
+.mosaic-third{grid-template-columns:1fr 1fr 1fr 1fr;grid-template-areas:"g10 g11 g12 g13" "g10 g14 g14 g15"}
+.mosaic-fourth{grid-template-columns:1fr 1fr 1fr 1fr;grid-template-areas:"g16 g16 g17 g18" "g19 g20 g17 g18"}
+.mosaic-fifth{grid-template-columns:1.45fr 1fr 1fr 1fr;grid-template-areas:"g21 g22 g23 g24"}
+.mosaic-final{grid-template-columns:1fr 1fr 1fr 1fr 1fr;grid-template-areas:"g26 g27 g28 g25 g29"}
+.mosaic-top [data-gallery="1"]{grid-area:g1}.mosaic-top [data-gallery="2"]{grid-area:g2}.mosaic-top [data-gallery="3"]{grid-area:g3}.mosaic-top [data-gallery="4"]{grid-area:g4}.mosaic-top [data-gallery="5"]{grid-area:g5}.mosaic-top [data-gallery="6"]{grid-area:g6}
+.mosaic-second [data-gallery="7"]{grid-area:g7}.mosaic-second [data-gallery="8"]{grid-area:g8}.mosaic-second [data-gallery="9"]{grid-area:g9}
+.mosaic-third [data-gallery="10"]{grid-area:g10}.mosaic-third [data-gallery="11"]{grid-area:g11}.mosaic-third [data-gallery="12"]{grid-area:g12}.mosaic-third [data-gallery="13"]{grid-area:g13}.mosaic-third [data-gallery="14"]{grid-area:g14}.mosaic-third [data-gallery="15"]{grid-area:g15}
+.mosaic-fourth [data-gallery="16"]{grid-area:g16}.mosaic-fourth [data-gallery="17"]{grid-area:g17}.mosaic-fourth [data-gallery="18"]{grid-area:g18}.mosaic-fourth [data-gallery="19"]{grid-area:g19}.mosaic-fourth [data-gallery="20"]{grid-area:g20}
+.mosaic-fifth [data-gallery="21"]{grid-area:g21}.mosaic-fifth [data-gallery="22"]{grid-area:g22}.mosaic-fifth [data-gallery="23"]{grid-area:g23}.mosaic-fifth [data-gallery="24"]{grid-area:g24}
+.mosaic-final [data-gallery="26"]{grid-area:g26}.mosaic-final [data-gallery="27"]{grid-area:g27}.mosaic-final [data-gallery="28"]{grid-area:g28}.mosaic-final [data-gallery="25"]{grid-area:g25}.mosaic-final [data-gallery="29"]{grid-area:g29}
+@media(max-width:760px){
+  .gallery-grid{width:100%;max-width:none;padding:0}
+  .mosaic-group{display:block;margin-bottom:2px}
+  .mosaic-group .gallery-item{grid-area:auto!important;height:auto;margin-bottom:2px}
+  .mosaic-group .gallery-item img{height:auto;object-fit:contain}
+}
+@media(min-width:761px){
+  .gallery-grid{width:80%;max-width:1180px;padding:0}
+  .mosaic-group{gap:6px;margin-bottom:6px}
+  .mosaic-top{aspect-ratio:2 / 1;grid-template-rows:repeat(2,minmax(0,1fr))}
+  .mosaic-second{grid-template-columns:200fr 96fr 89fr}
+  .mosaic-second{aspect-ratio:400 / 139;grid-template-rows:minmax(0,1fr)}
+  .mosaic-third{grid-template-columns:142fr 79fr 71fr 90fr}
+  .mosaic-third{aspect-ratio:400 / 246;grid-template-rows:repeat(2,minmax(0,1fr))}
+  .mosaic-fourth{grid-template-columns:66fr 61fr 127fr 127fr}
+  .mosaic-fourth{aspect-ratio:400 / 194;grid-template-rows:repeat(2,minmax(0,1fr))}
+  .mosaic-fifth{grid-template-columns:154fr 88fr 88fr 69fr}
+  .mosaic-fifth{aspect-ratio:400 / 110;grid-template-rows:minmax(0,1fr)}
+  .mosaic-final{aspect-ratio:400 / 111;grid-template-rows:minmax(0,1fr)}
+}
+@media(max-width:480px){.gallery-grid{padding:0}.mosaic-group{gap:0;margin-bottom:0}.mosaic-group .gallery-item{margin-bottom:0}}
+dialog{width:min(94vw,1200px);max-width:none;border:0;padding:0;background:#2B2824;color:var(--white);box-shadow:0 20px 70px rgba(0,0,0,.35)}
+.lightbox-image{display:block;width:100%;height:min(86vh,900px);object-fit:contain}
+.lightbox-close,.lightbox-control{position:absolute;z-index:1;border:1px solid rgba(255,255,255,.65);border-radius:50%;background:rgba(46,43,39,.45);color:var(--white);cursor:pointer;display:grid;place-items:center;transition:background .2s,border-color .2s}
+.lightbox-close:hover,.lightbox-control:hover{background:rgba(46,43,39,.86);border-color:var(--white)}
+.lightbox-close{top:16px;right:16px;width:40px;height:40px;font-size:25px;line-height:1}
+.lightbox-control{top:50%;transform:translateY(-50%);width:44px;height:44px;font-size:24px;line-height:1}
+.lightbox-control.prev{left:16px}.lightbox-control.next{right:16px}
+.lightbox-count{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+footer{background:var(--white);text-align:center;padding:clamp(64px,10vh,120px) var(--pad) 44px}
+footer .mark{font-weight:700;text-transform:uppercase;letter-spacing:.3em;font-size:17px;color:var(--mushroom);margin-bottom:18px}
+footer h3{font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:14px;color:var(--ink-strong);margin-bottom:34px}
+footer .legal{max-width:72ch;margin:0 auto 26px;font-size:12px;line-height:1.8;color:#8A847B}
+footer .copyright{font-size:12px;color:#8A847B}
+.instagram-link{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color .2s,border-color .2s}
+.instagram-link:hover{color:var(--ink-strong);border-bottom-color:var(--ink-strong)}
+.instagram-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+</style>
+</head>
+<body>
+<nav aria-label="Primary">
+  <a class="wordmark" href="index.html#top">College Farm</a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul id="nav-menu">
+    <li><a href="index.html#house">The House</a></li>
+    <li><a href="index.html#technical">For Production</a></li>
+    <li><a href="index.html#spaces">The Spaces</a></li>
+    <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+    <li><a href="index.html#drawings">Drawings</a></li>
+    <li><a href="index.html#partners">Partners</a></li>
+    <li><a href="index.html#enquire">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="gallery-grid" aria-label="College Farm photo gallery">
+  <section class="mosaic-group mosaic-top" aria-label="Gallery images 1 to 6">
+    <button class="gallery-item" data-gallery="1" type="button" aria-label="Open gallery image 1"><img src="media/gallery-1.jpg" alt="College Farm gallery image 1 of 29" fetchpriority="high"></button>
+    <button class="gallery-item" data-gallery="2" type="button" aria-label="Open gallery image 2"><img src="media/gallery-2.jpg" alt="College Farm gallery image 2 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="3" type="button" aria-label="Open gallery image 3"><img src="media/gallery-3.jpg" alt="College Farm gallery image 3 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="4" type="button" aria-label="Open gallery image 4"><img src="media/gallery-4.jpg" alt="College Farm gallery image 4 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="5" type="button" aria-label="Open gallery image 5"><img src="media/gallery-5.jpg" alt="College Farm gallery image 5 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="6" type="button" aria-label="Open gallery image 6"><img src="media/gallery-6.jpg" alt="College Farm gallery image 6 of 29" loading="lazy"></button>
+  </section>
+  <section class="mosaic-group mosaic-second" aria-label="Gallery images 7 to 9">
+    <button class="gallery-item" data-gallery="7" type="button" aria-label="Open gallery image 7"><img src="media/gallery-7.jpg" alt="College Farm gallery image 7 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="8" type="button" aria-label="Open gallery image 8"><img src="media/gallery-8.jpg" alt="College Farm gallery image 8 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="9" type="button" aria-label="Open gallery image 9"><img src="media/gallery-9.jpg" alt="College Farm gallery image 9 of 29" loading="lazy"></button>
+  </section>
+  <section class="mosaic-group mosaic-third" aria-label="Gallery images 10 to 15">
+    <button class="gallery-item" data-gallery="10" type="button" aria-label="Open gallery image 10"><img src="media/gallery-10.jpg" alt="College Farm gallery image 10 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="11" type="button" aria-label="Open gallery image 11"><img src="media/gallery-11.jpg" alt="College Farm gallery image 11 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="12" type="button" aria-label="Open gallery image 12"><img src="media/gallery-12.jpg" alt="College Farm gallery image 12 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="13" type="button" aria-label="Open gallery image 13"><img src="media/gallery-13.jpg" alt="College Farm gallery image 13 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="14" type="button" aria-label="Open gallery image 14"><img src="media/gallery-14.jpg" alt="College Farm gallery image 14 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="15" type="button" aria-label="Open gallery image 15"><img src="media/gallery-15.jpg" alt="College Farm gallery image 15 of 29" loading="lazy"></button>
+  </section>
+  <section class="mosaic-group mosaic-fourth" aria-label="Gallery images 16 to 20">
+    <button class="gallery-item" data-gallery="16" type="button" aria-label="Open gallery image 16"><img src="media/gallery-16.jpg" alt="College Farm gallery image 16 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="17" type="button" aria-label="Open gallery image 17"><img src="media/gallery-17.jpg" alt="College Farm gallery image 17 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="18" type="button" aria-label="Open gallery image 18"><img src="media/gallery-18.jpg" alt="College Farm gallery image 18 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="19" type="button" aria-label="Open gallery image 19"><img src="media/gallery-19.jpg" alt="College Farm gallery image 19 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="20" type="button" aria-label="Open gallery image 20"><img src="media/gallery-20.jpg" alt="College Farm gallery image 20 of 29" loading="lazy"></button>
+  </section>
+  <section class="mosaic-group mosaic-fifth" aria-label="Gallery images 21 to 24">
+    <button class="gallery-item" data-gallery="21" type="button" aria-label="Open gallery image 21"><img src="media/gallery-21.jpg" alt="College Farm gallery image 21 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="22" type="button" aria-label="Open gallery image 22"><img src="media/gallery-22.jpg" alt="College Farm gallery image 22 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="23" type="button" aria-label="Open gallery image 23"><img src="media/gallery-23.jpg" alt="College Farm gallery image 23 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="24" type="button" aria-label="Open gallery image 24"><img src="media/gallery-24.jpg" alt="College Farm gallery image 24 of 29" loading="lazy"></button>
+  </section>
+  <section class="mosaic-group mosaic-final" aria-label="Gallery images 26, 27, 28, 25 and 29">
+    <button class="gallery-item" data-gallery="26" type="button" aria-label="Open gallery image 26"><img src="media/gallery-26.jpg" alt="College Farm gallery image 26 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="27" type="button" aria-label="Open gallery image 27"><img src="media/gallery-27.jpg" alt="College Farm gallery image 27 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="28" type="button" aria-label="Open gallery image 28"><img src="media/gallery-28.jpg" alt="College Farm gallery image 28 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="25" type="button" aria-label="Open gallery image 25"><img src="media/gallery-25.jpg" alt="College Farm gallery image 25 of 29" loading="lazy"></button>
+    <button class="gallery-item" data-gallery="29" type="button" aria-label="Open gallery image 29"><img src="media/gallery-29.jpg" alt="College Farm gallery image 29 of 29" loading="lazy"></button>
+  </section>
+</main>
+
+<dialog id="lightbox" aria-label="Enlarged gallery image">
+  <button class="lightbox-close" type="button" aria-label="Close enlarged image">&times;</button>
+  <button class="lightbox-control prev" type="button" aria-label="Previous gallery image">&#8249;</button>
+  <img class="lightbox-image" id="lightbox-image" alt="">
+  <button class="lightbox-control next" type="button" aria-label="Next gallery image">&#8250;</button>
+  <p class="lightbox-count" id="lightbox-count" aria-live="polite"></p>
+</dialog>
+
+<footer>
+  <div class="mark">College Farm</div>
+  <h3>Stills &nbsp;Motion &nbsp;Editorial</h3>
+  <p class="legal">College Farm is private property, made available for photographic and film production under individual licence. Enquiries are welcome directly or through location agencies, with each booking reviewed and agreed individually; no automated booking is offered. All enquiries, rates and production materials are treated in strict confidence, and the precise address is disclosed only to confirmed productions. Drone, night and amplified-sound work by prior agreement.</p>
+  <p class="copyright">©2026 College Farm</p>
+  <a class="instagram-link" href="https://www.instagram.com/location9collegefarm/" target="_blank" rel="noopener" aria-label="Follow College Farm on Instagram">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+    <span>@location9collegefarm</span>
+  </a>
+</footer>
+
+<script>
+const navToggle=document.querySelector('.nav-toggle');
+const navMenu=document.getElementById('nav-menu');
+function closeNav(){navMenu.classList.remove('open');navToggle.setAttribute('aria-expanded','false');document.body.classList.remove('nav-locked')}
+navToggle.addEventListener('click',()=>{const open=navMenu.classList.toggle('open');navToggle.setAttribute('aria-expanded',open);document.body.classList.toggle('nav-locked',open)});
+navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav()});
+
+const galleryItems=[...document.querySelectorAll('.gallery-item')].sort((a,b)=>Number(a.dataset.gallery)-Number(b.dataset.gallery));
+const lightbox=document.getElementById('lightbox');
+const lightboxImage=document.getElementById('lightbox-image');
+const lightboxCount=document.getElementById('lightbox-count');
+let lightboxIndex=0;
+let lastTrigger=null;
+function showImage(index){
+  lightboxIndex=(index+galleryItems.length)%galleryItems.length;
+  const source=galleryItems[lightboxIndex].querySelector('img');
+  lightboxImage.src=source.currentSrc||source.src;
+  lightboxImage.alt=source.alt;
+  lightboxCount.textContent=`${lightboxIndex+1} / ${galleryItems.length}`;
+}
+function openLightbox(index){
+  lastTrigger=galleryItems[index];
+  showImage(index);
+  lightbox.showModal();
+  lightbox.querySelector('.lightbox-close').focus();
+}
+galleryItems.forEach((item,index)=>item.addEventListener('click',()=>openLightbox(index)));
+lightbox.querySelector('.lightbox-close').addEventListener('click',()=>lightbox.close());
+lightbox.querySelector('.prev').addEventListener('click',()=>showImage(lightboxIndex-1));
+lightbox.querySelector('.next').addEventListener('click',()=>showImage(lightboxIndex+1));
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.close()});
+lightbox.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft'){e.preventDefault();showImage(lightboxIndex-1)}
+  if(e.key==='ArrowRight'){e.preventDefault();showImage(lightboxIndex+1)}
+});
+lightbox.addEventListener('close',()=>{if(lastTrigger)lastTrigger.focus()});
+</script>
+</body>
+</html>
